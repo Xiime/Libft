@@ -6,7 +6,7 @@
 /*   By: mtrudel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 11:15:05 by mtrudel           #+#    #+#             */
-/*   Updated: 2016/11/15 17:37:34 by mtrudel          ###   ########.fr       */
+/*   Updated: 2017/10/19 18:01:09 by mtrudel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+# define BUFF_SIZE 32
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
@@ -44,6 +45,7 @@ void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
+int					get_next_line(const int fd, char **line);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
@@ -64,6 +66,7 @@ void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void(*f)(unsigned int, char *));
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strfreejoin(char *s1, char *s2);
 void				ft_putchar_uni(int	c);
 void				ft_putchar_fd_uni(int c, int fd);
 char				*ft_strtrim(char const *s);
@@ -72,6 +75,7 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
+int					get_next_line(int fd, char **line);
 typedef struct		s_list
 {
 	void			*content;
